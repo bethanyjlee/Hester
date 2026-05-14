@@ -1,0 +1,31 @@
+ID,Soil,Treatment,D1,D2,D6,MaxGerm,Total,Notes
+1,H1,Surface,2,5,1,5,50,"1-5 some germinating on rim, some on top of soil, none seem to be coming up through the soil"
+2,H1,Surface,8,6,4,8,50,"It almost looks like H2S are holding water better? look more saturated, maybe error on my part"
+3,H1,Surface,7,7,5,7,50,"07/31 - all red and stressed in hester soil, probably dead soon. May have dried out over weekend"
+4,H1,Surface,4,4,3,4,50,
+5,H1,Surface,4,8,6,8,50,
+6,H1,Buried,1,1,1,1,50,
+7,H1,Buried,0,0,0,0,50,
+8,H1,Buried,0,0,0,0,50,
+9,H1,Buried,0,0,0,0,50,
+10,H1,Buried,0,0,0,0,50,
+11,H2,Surface,0,0,0,0,50,
+12,H2,Surface,1,1,1,1,50,"On lip of cup, not germinating on the soil"
+13,H2,Surface,0,0,0,0,50,
+14,H2,Surface,0,0,0,0,50,
+15,H2,Surface,0,0,0,0,50,
+16,H2,Buried,0,0,0,0,50,
+17,H2,Buried,0,0,0,0,50,
+18,H2,Buried,0,0,0,0,50,
+19,H2,Buried,0,0,0,0,50,
+20,H2,Buried,0,0,0,0,50,
+21,PS,Surface,12,12,12,12,50,21-29 look healthier and more upright than 1-5
+22,PS,Surface,8,13,17,17,50,"07/31 - PS also has some stressed sprouts, but healthier and larger than H2"
+23,PS,Surface,17,22,24,22,50,
+24,PS,Surface,18,17,16,18,50,
+25,PS,Surface,11,16,16,16,50,
+26,PS,Buried,3,3,3,3,50,
+27,PS,Buried,5,6,5,6,50,
+28,PS,Buried,4,4,5,5,50,
+29,PS,Buried,2,3,8,8,50,
+30,PS,Buried,0,0,0,0,50,
