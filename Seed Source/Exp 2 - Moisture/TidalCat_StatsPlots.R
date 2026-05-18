@@ -52,7 +52,7 @@ fllong_cumgerm <- fllong %>%
 
 #### general summary data ####
 
-data_summary <- dataready %>%
+data_summary_prop <- dataready %>%
   mutate(germ_prop = successes / Seeds) %>%
   group_by(SiteID, Watering) %>%
   summarise(
@@ -63,7 +63,7 @@ data_summary <- dataready %>%
   ) %>%
   ungroup()
 
-print(data_summary)
+print(data_summary_prop)
 
 
 #### select final total germination only for models ####
