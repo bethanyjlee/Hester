@@ -27,7 +27,7 @@ dataready <- march %>%
   ) %>%
   filter(!is.na(successes), SeedCount > 0, successes >= 0, failures >= 0)
 
-#### Ealy summaries ####
+#### Early summaries ####
 
 
 data_summary <- dataready %>%

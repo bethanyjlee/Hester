@@ -371,18 +371,33 @@ pred_grid <- pred_grid %>%
 library(performance)
 #### Equations + marginal R2 ####
 
-coefs <- fixef(m_tidal_bb)$cond
+# Separate datasets
+viab_tidal <- subset(viab, TidalCat == "Tidal")
+viab_restored <- subset(viab, TidalCat == "Restored")
 
-# Restored = reference category
-b0_restored <- coefs["(Intercept)"]
-b1_restored <- coefs["Elevation"]
+# Separate models
+m_tidal <- glmmTMB(
+  cbind(Seeds, Total - Seeds) ~ Elevation,
+  family = betabinomial(link = "logit"),
+  data = viab_tidal
+)
 
-# Tidal coefficients
-b0_tidal <- b0_restored + coefs["TidalCatTidal"]
-b1_tidal <- b1_restored + coefs["TidalCatTidal:Elevation"]
+m_restored <- glmmTMB(
+  cbind(Seeds, Total - Seeds) ~ Elevation,
+  family = betabinomial(link = "logit"),
+  data = viab_restored
+)
 
-# Marginal R2 only
-r2_marg <- round(performance::r2(m_tidal_bb)$R2_marginal, 3)
+# Predicted values
+pred_tidal <- predict(m_tidal, type = "response")
+pred_restored <- predict(m_restored, type = "response")
+
+# Pseudo R2
+r2_tidal <- round(cor(viab_tidal$Seeds / viab_tidal$Total,
+                      pred_tidal)^2, 3)
+
+r2_restored <- round(cor(viab_restored$Seeds / viab_restored$Total,
+                         pred_restored)^2, 3)
 
 # Labels
 eq_labels <- data.frame(
@@ -391,18 +406,18 @@ eq_labels <- data.frame(
   label = c(
     paste0(
       "Tidal: y = ",
-      round(b0_tidal,2),
+      round(b0_tidal,3),
       ifelse(b1_tidal >= 0, " + ", " - "),
-      abs(round(b1_tidal,2)),
-      "x\nRm² = ", r2_marg
+      abs(round(b1_tidal,3)),
+      "x\nRm² = ", r2_tidal
     ),
     
     paste0(
       "Restored: y = ",
-      round(b0_restored,2),
+      round(b0_restored,3),
       ifelse(b1_restored >= 0, " + ", " - "),
-      abs(round(b1_restored,2)),
-      "x\nRm² = ", r2_marg
+      abs(round(b1_restored,3)),
+      "x\nRm² = ", r2_restored
     )
   ),
   
