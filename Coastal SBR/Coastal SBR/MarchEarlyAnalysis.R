@@ -57,7 +57,7 @@ data_summary_prop <- dataready %>%
   ungroup()
 
 
-Summary(data_summary_prop)
+print(data_summary_prop)
 
 
 #### make a graph rq ####
