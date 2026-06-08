@@ -3,6 +3,7 @@
 
 library(cluster)
 library(tidyverse)
+library(multcomp)
 
 rm(list = ls())
 
