@@ -5,7 +5,7 @@ library(dplyr)
 
 rm(list = ls())
 
-setwd("~/Hester/Coastal SBR/Coastal SBR")
+setwd("~/GitHub/Hester/Coastal SBR/Coastal SBR")
 
 #### Insert Data ####
 
@@ -59,6 +59,16 @@ nmds <- metaMDS(
 
 
 cat("Stress =", nmds$stress, "\n")
+
+adonis2(
+  gower_dist ~ Soil +
+    Watering +
+    Microtopography +
+    SeedSource +
+    Containment,
+  data = env
+)
+
 
 
 
