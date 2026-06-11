@@ -1,9 +1,11 @@
 #### Chapter 2 Viability of Hester and Natural Sites
 ### elevation, succulence, site history
 
+setwd("~/GitHub/Hester/Seed Source/Exp 1 - Viability")
+
 #### Old - prior to 9/26/25 - Analysis for CERF #####
 
-setwd("~/R data/Chp2SeedSource/Exp 1 - Viability")
+
 alldata<-read.csv('Viability.csv')
 
 hester<-#need to filter all data to Site=HesterP1 and P2
@@ -201,8 +203,6 @@ ggplot(allseeds, aes(x = ZElev, y = Rate, color = SiteType)) +
 
 #### New - 9/26/25 - Analysis for Manuscript ####
 
-
-setwd("~/R data/Chp2SeedSource/Exp 1 - Viability")
 
 #### Packages ####
 library(dplyr)
@@ -473,7 +473,6 @@ p_facet <- ggplot() +
   geom_line(data = pred_grid,
             aes(Elevation, y = fit, color = TidalCat),
             linewidth = 1.2) +
-  facet_wrap(~ TidalCat) +
   scale_color_manual(values = group_colors, guide = "none") +
   scale_fill_manual(values = group_colors, guide = "none") +
   scale_y_continuous(limits = c(0,0.8), expand = c(0,0.02)) +

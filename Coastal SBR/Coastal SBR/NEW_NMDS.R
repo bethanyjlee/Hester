@@ -79,15 +79,15 @@ plot(
   scores_df$NMDS1,
   scores_df$NMDS2,
   pch = 19,
-  col = as.factor(dat$Soil),
+  col = as.factor(dat$Watering),
   xlab = "NMDS1",
   ylab = "NMDS2"
 )
 
 legend(
   "bottomright",
-  legend = levels(as.factor(dat$Soil)),
-  col = 1:length(levels(as.factor(dat$Soil))),
+  legend = levels(as.factor(dat$Watering)),
+  col = 1:length(levels(as.factor(dat$Watering))),
   pch = 19
 )
 
