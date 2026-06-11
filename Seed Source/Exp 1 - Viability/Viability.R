@@ -314,7 +314,7 @@ AIC(m_type_null, m_type_main, m_type_inter,
 
 # 2) Compare model fit
 
-AIC(m_glm_site, m_glm_type, m_glmm_site, m_glm_full)
+AIC(m_glm_type, m_glmm_site, m_glm_full)
 
 # Overdispersion checks
 
