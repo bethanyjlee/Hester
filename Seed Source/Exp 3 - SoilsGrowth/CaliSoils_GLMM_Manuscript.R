@@ -1,6 +1,6 @@
 ###### GLM Soil Effects on Different Seed Sources and their Germination/Establishment
 
-setwd("~/R data/Chp2SeedSource/Exp 3 - SoilsGrowth")
+setwd("~/Hester/Seed Source/Exp 3 - SoilsGrowth")
 
 #### Data ####
 fulldata <- read.csv("FullGermElkhornSeedSource.csv")
@@ -335,8 +335,8 @@ raw_ts <- dataready %>%
     .groups   = "drop"
   )
 
-group_colors<- c(Tidal = "#1E88E5", Muted = '#D81B60', Restored = '#FFC107')
-neworder<-c("Tidal","Muted","Restored")
+group_colors<- c(Natural = "#1E88E5", Diked = '#D81B60', Restored = '#FFC107')
+neworder<-c("Natural","Diked","Restored")
 raw_ts<-arrange(transform(raw_ts, TidalCat = factor(TidalCat, levels = neworder)), TidalCat)
 
 
@@ -362,6 +362,13 @@ gg_raw_ts
 soil_colors<- c(Hester = "#999333", Combo = '#aa4499', "Potting Soil" = '#661100')
 
 #### MS FIgure 5 ####
+
+tidal_labels <- c(
+  Natural = "Natural Provenances",
+  Diked = "Diked Provenances",
+  Restored = "Restored Provenances"
+)
+
 gg_raw_soil <- ggplot(raw_ts, aes(x = DaysAfterSowing, y = mean_prop , 
                                 fill = Soils, color = Soils)) +
   geom_smooth(linewidth = 0.7) +
@@ -374,7 +381,7 @@ gg_raw_soil <- ggplot(raw_ts, aes(x = DaysAfterSowing, y = mean_prop ,
   labs(x = "Days after sowing", color = "Soil Type") +
   scale_color_manual(values = soil_colors) +
   scale_fill_manual(values = soil_colors, guide = 'none') +
-  facet_grid(~ TidalCat) +
+  facet_grid(~ TidalCat, labeller = labeller(TidalCat = tidal_labels)) +
   theme_bw(base_size = 12) +
   labs(y = "Proportion Germinated") +
   theme(axis.text.x = element_text(angle = 0, hjust = 0.5))

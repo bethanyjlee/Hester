@@ -214,7 +214,7 @@ library(performance)
 library(car)
 library(emmeans)
 
-
+setwd("~/Hester/Seed Source/Exp 1 - Viability")
 
 # ---- Data ----
 viab <- read.csv("Viability.csv") %>%
@@ -374,6 +374,10 @@ library(performance)
 # Separate datasets
 viab_tidal <- subset(viab, TidalCat == "Tidal")
 viab_restored <- subset(viab, TidalCat == "Restored")
+
+
+##### FIX THIS HERE ######
+
 
 # Separate models
 m_tidal <- glmmTMB(

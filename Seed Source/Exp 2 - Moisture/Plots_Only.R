@@ -1,6 +1,6 @@
 ## CUMULATIVE TOTAL GERMINATION ANALYSIS
 
-setwd("~/R data/Chp2SeedSource/Exp 2 - Moisture")
+setwd("~/Hester/Seed Source/Exp 2 - Moisture")
 
 library(dplyr)
 library(tidyr)
@@ -73,8 +73,8 @@ plot_dat_count <- cum_dat %>%
   )
 
 #### 5. Set site order by tidal category ####
-tidal_sites  <- sort(unique(plot_dat_count$SiteID[plot_dat_count$TidalCat == "Tidal"]))
-muted_sites  <- sort(unique(plot_dat_count$SiteID[plot_dat_count$TidalCat == "Muted"]))
+tidal_sites  <- sort(unique(plot_dat_count$SiteID[plot_dat_count$TidalCat == "Natural"]))
+muted_sites  <- sort(unique(plot_dat_count$SiteID[plot_dat_count$TidalCat == "Diked"]))
 rest_sites   <- sort(unique(plot_dat_count$SiteID[plot_dat_count$TidalCat == "Restored"]))
 
 panel_order <- c(muted_sites, tidal_sites, rest_sites)
@@ -162,5 +162,7 @@ final_cum_plot +
             inherit.aes = FALSE,
             hjust = 1.2,
             size = 5,
-            fontface = "bold")                                                                                                                                                                                                                          
-                                                                                                                                                                                                                                                     final_cum_plot +geom_text(data = stat_dat,aes(x = Inf, y = y, label = sig),inherit.aes = FALSE,hjust = 1.2,size = 5,fontface = "bold")
+            fontface = "bold")
+
+final_cum_plot +geom_text(data = stat_dat,aes(x = Inf, y = y, label = sig),inherit.aes = FALSE,hjust = 1.2,size = 5,fontface = "bold")
+                                                                                                                                                                                                                                                     
