@@ -522,3 +522,63 @@ p_site
 ggsave(filename = "SupplementalFigure3.tif", dpi = 300, path = "Figures")
 
 
+##### non-linear test #####
+library(glmmTMB)
+library(performance)
+
+# Center elevation to reduce collinearity
+viab$Elev_c <- scale(viab$Elevation, center = TRUE, scale = FALSE)
+
+# Linear model
+m_linear <- glmmTMB(
+  cbind(Seeds, Fail) ~ TidalCat * Elev_c + (1|Site),
+  family = betabinomial(link = "logit"),
+  data = viab
+)
+
+# Quadratic model
+m_quad <- glmmTMB(
+  cbind(Seeds, Fail) ~ TidalCat * (Elev_c + I(Elev_c^2)) +
+    (1|Site),
+  family = betabinomial(link = "logit"),
+  data = viab
+)
+
+# Compare models
+AIC(m_linear, m_quad)
+
+anova(m_linear, m_quad)
+
+summary(m_quad)
+
+# Is the quadratic term significant?
+car::Anova(m_quad, type = 3)
+
+
+
+#### site random variable was non significant - lets remove
+m_quad_glm <- glmmTMB(
+  cbind(Seeds, Fail) ~
+    TidalCat * (Elev_c + I(Elev_c^2)),
+  family = betabinomial(),
+  data = viab
+)
+
+AIC(m_quad, m_quad_glm)
+
+####AIC is improved after removing site 
+
+m_tidal_quad <- glmmTMB(
+  cbind(Seeds, Fail) ~ Elev_c + I(Elev_c^2),
+  family = betabinomial(),
+  data = subset(viab, TidalCat == "Tidal")
+)
+
+m_restored_quad <- glmmTMB(
+  cbind(Seeds, Fail) ~ Elev_c + I(Elev_c^2),
+  family = betabinomial(),
+  data = subset(viab, TidalCat == "Restored")
+)
+
+summary(m_tidal_quad)
+summary(m_restored_quad)
