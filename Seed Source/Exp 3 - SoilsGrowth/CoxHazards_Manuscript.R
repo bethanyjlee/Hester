@@ -1,6 +1,6 @@
 
 rm(list=ls())
-setwd("~/R data/Chp2SeedSource/Exp 3 - SoilsGrowth")
+setwd("~/Hester/Seed Source/Exp 3 - SoilsGrowth")
 
 library(dplyr)
 library(tidyr)

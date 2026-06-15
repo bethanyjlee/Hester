@@ -1,6 +1,6 @@
 rm(list = ls())
 
-setwd("~/R data/Chp2SeedSource/Exp 3 - SoilsGrowth")
+setwd("~/Hester/Seed Source/Exp 3 - SoilsGrowth")
 
 library(dplyr)
 library(tidyr)
@@ -75,7 +75,7 @@ dataready <- growth_long %>%
     Soils = factor(SoilType, levels = c("Hester", "Combo", "Potting Soil")),
     SiteId = factor(SiteID),
     growth = factor(Height),
-    Tidal = factor(TidalCat, levels = c("Tidal", "Muted", "Restored")))
+    Tidal = factor(TidalCat, levels = c("Natural", "Diked", "Restored")))
 
 # Model with interactions
 m_full <- glm(
@@ -228,10 +228,10 @@ summary(emm_growth_tid) %>%
 
 
 #### full plots ###
-group_colors<- c(Tidal = "#1E88E5", Muted = '#D81B60', Restored = '#FFC107')
+group_colors<- c(Natural = "#1E88E5", Diked = '#D81B60', Restored = '#FFC107')
 soil_colors<- c(Hester = "#999333", Combo = '#aa4499', "Potting Soil" = '#661100')
 
-neworder<-c("Tidal","Muted","Restored")
+neworder<-c("Natural","Diked","Restored")
 growth_long<-arrange(transform(growth_long, Tidal = factor(Tidal, levels = neworder)), Tidal)
 
 

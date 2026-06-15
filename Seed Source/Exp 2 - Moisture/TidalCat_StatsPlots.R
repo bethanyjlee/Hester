@@ -4,7 +4,7 @@
 rm(list =ls())
 #### set wd
 
-setwd("~/R data/Chp2SeedSource/Exp 2 - Moisture")
+setwd("~/Hester/Seed Source/Exp 2 - Moisture")
 
 
 ### load library ####
@@ -146,10 +146,10 @@ pairs(emm_tidal, adjust = "tukey")
 
 #### tentative plots ####
 
-group_colors<- c(Tidal = "#1E88E5", Muted = '#D81B60', Restored = '#FFC107')
+group_colors<- c(Natural = "#1E88E5", Diked = '#D81B60', Restored = '#FFC107')
 watering_colors <- c (Low = 'orange', High = 'skyblue')
 
-neworder<-c("Tidal","Muted","Restored")
+neworder<-c("Natural","Diked","Restored")
 fllong_cumgerm<-arrange(transform(fllong_cumgerm, Tidal = factor(Tidal, levels = neworder)), Tidal)
 
 
@@ -166,23 +166,38 @@ plot_cum_total_tidal <- fllong_cumgerm %>%
 
 
 
-p_spaghetti_flip_total_water <- ggplot() +
- # geom_point(data = plot_cum_total_tidal,
- #            aes(x = Days, y = mean_prop, color = Watering),alpha = 0.7, size = 2)+
-  geom_smooth(data = plot_cum_total_tidal, 
-              aes(x=Days, y=mean_prop, fill = Watering, color = Watering))+
-  facet_wrap(~ Tidal, ncol = 3) +
-  scale_y_continuous(limits = c(0, 0.25)) +
-  scale_fill_manual(values = watering_colors)+
-  scale_color_manual(values = watering_colors) +
-  labs(x = "Day",
-       y = "Proportion Germinated",
-       title = "Cumulative total germination by watering treatment and tidal site history") +
-  theme_bw() + 
-  theme(panel.grid.minor = element_blank(),
-        strip.text = element_text(face = "bold"),
-        legend.position = "right")
+tidal_labels <- c(
+  Natural = "Natural Provenances",
+  Diked = "Diked Provenances",
+  Restored = "Restored Provenances"
+)
 
+p_spaghetti_flip_total_water <- ggplot() +
+  geom_smooth(
+    data = plot_cum_total_tidal,
+    aes(x = Days, y = mean_prop,
+        fill = Watering,
+        color = Watering)
+  ) +
+  facet_wrap(
+    ~ Tidal,
+    ncol = 3,
+    labeller = labeller(Tidal = tidal_labels)
+  ) +
+  scale_y_continuous(limits = c(0, 0.25)) +
+  scale_fill_manual(values = watering_colors) +
+  scale_color_manual(values = watering_colors) +
+  labs(
+    x = "Day",
+    y = "Proportion Germinated",
+    title = "Cumulative total germination by watering treatment and tidal site history"
+  ) +
+  theme_bw() +
+  theme(
+    panel.grid.minor = element_blank(),
+    strip.text = element_text(face = "bold"),
+    legend.position = "right"
+  )
 p_spaghetti_flip_total_water
 
 ggsave(filename = "Figure3.tif", dpi = 300, path = "Figures")
