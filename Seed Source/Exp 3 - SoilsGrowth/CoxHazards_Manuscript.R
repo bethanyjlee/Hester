@@ -409,3 +409,25 @@ survival_summary <- dat2 %>%
   arrange(SiteID.x)
 
 print(survival_summary)
+
+
+anova(cox_soil_tide, cox_soil_tide_int, test = "LRT")
+
+cox_soil_only <- coxph(Surv(time, status) ~ SoilType, data = surv_data)
+
+anova(cox_soil_only, cox_soil_tide, test = "LRT")
+
+drop1(Cox_soil_randSite, test = "Chisq")
+
+
+
+####emmeans ####
+
+library(emmeans)
+
+emm <- emmeans(
+  cox_soil_tide_int,
+  ~ SoilType | Tidal
+)
+
+pairs(emm)
