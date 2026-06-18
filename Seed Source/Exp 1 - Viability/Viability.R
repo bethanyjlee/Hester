@@ -582,3 +582,24 @@ m_restored_quad <- glmmTMB(
 
 summary(m_tidal_quad)
 summary(m_restored_quad)
+
+
+m_tidal_linear <- glmmTMB(
+  cbind(Seeds, Fail) ~ Elev_c,
+  family = betabinomial(),
+  data = subset(viab, TidalCat == "Tidal")
+)
+
+summary(m_tidal_linear) ###it failed - might not be worth to do 2 separate fits
+
+
+
+m_quad2 <- glmmTMB(
+  cbind(Seeds, Fail) ~
+    TidalCat * (Elev_c + I(Elev_c^2)),
+  family = betabinomial(),
+  data = viab
+)
+
+summary(m_quad2)
+AIC(m_quad, m_quad2)
