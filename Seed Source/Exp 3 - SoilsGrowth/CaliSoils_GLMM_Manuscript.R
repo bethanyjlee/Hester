@@ -1,6 +1,13 @@
+rm(list =ls())
+
 ###### GLM Soil Effects on Different Seed Sources and their Germination/Establishment
 
 setwd("~/Hester/Seed Source/Exp 3 - SoilsGrowth")
+
+library(dplyr)
+library(tidyverse)
+
+
 
 #### Data ####
 fulldata <- read.csv("FullGermElkhornSeedSource.csv")
@@ -406,16 +413,22 @@ long_id <- fulldata %>%
     
   )
 
+last_non_na <- function(x) {
+  x <- x[!is.na(x)]
+  if(length(x) == 0) return(NA)
+  tail(x, 1)
+}
+
 # Final (cumulative) count per replicate
 final_per_rep <- long_id %>%
   arrange(.rowid, Date) %>%
-  group_by(.rowid, Soils, Seed.Source, Seeds, TidalCat) %>%
+  group_by(.rowid, Soils, SiteID, Seeds, TidalCat) %>%
   summarise(final = last_non_na(value), .groups = "drop") %>%
   mutate(final = pmax(pmin(final, Seeds), 0))
 
 # Aggregate to Soil × Source totals and compute Wilson CI
 agg_base <- final_per_rep %>%
-  group_by(Soils, TidalCat, Seed.Source) %>%
+  group_by(Soils, TidalCat, SiteID) %>%
   summarise(success = sum(final, na.rm = TRUE),
             trials  = sum(Seeds, na.rm = TRUE),
             .groups = "drop") %>%
@@ -429,25 +442,35 @@ agg_base <- final_per_rep %>%
     ucl = pmin(1, (ctr + adj)/den)
   )
 
-# Optional: order sources by overall observed mean
-order_sources_obs <- agg_base %>%
-  group_by(Seed.Source) %>%
-  summarise(m = mean(p), .groups = "drop") %>%
-  arrange(m) %>% pull(Seed.Source)
-
-agg_base <- agg_base %>%
-  mutate(Seed.Source = factor(Seed.Source, levels = order_sources_obs))
 
 # Plot as bars (faceted by soil)
-gg_base_final <- ggplot(agg_base, aes(x = TidalCat, y = p, fill = Soils)) +
-  geom_bar(width = 0.7, color = "grey30") +
-  geom_errorbar(aes(ymin = lcl, ymax = ucl), width = 0.2) +
-  scale_y_continuous(labels = percent_format(accuracy = 1), name = "Final observed germination (%)") +
-  labs(x = "Seed source", fill = "Soil",
-       title = "Final-day observed germination (Wilson 95% CI)") +
+gg_base_final <- ggplot(
+  agg_base,
+  aes(x = SiteID, y = p, fill = Soils)
+) +
+  geom_col(position = position_dodge(width = 0.7),
+           width = 0.7,
+           color = "grey30") +
+  geom_errorbar(
+    aes(ymin = lcl, ymax = ucl),
+    position = position_dodge(width = 0.7),
+    width = 0.2
+  ) +
+  scale_y_continuous(
+    labels = percent_format(accuracy = 1),
+    name = "Final observed germination (%)"
+  ) +
+  scale_fill_manual(values = soil_colors) +
+  labs(
+    x = "Seed source",
+    fill = "Soil",
+    title = "Final-day observed germination (Wilson 95% CI)"
+  ) +
   theme_bw(base_size = 12) +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1),
-        panel.grid.minor = element_blank())
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    panel.grid.minor = element_blank()
+  )
 
 gg_base_final
 
