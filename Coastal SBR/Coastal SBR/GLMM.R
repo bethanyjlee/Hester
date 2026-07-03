@@ -1,5 +1,6 @@
 # Coastal SBR Germination Analysis Workflow
 
+rm(list=ls())
 ## Load Packages
 
 library(tidyverse)
@@ -131,7 +132,7 @@ fullmodel1<- glmmTMB(cbind(SeedsGerminated, SeedsSown - SeedsGerminated)~ Phase 
 
 
 fullmodelint1<- glmmTMB(cbind(SeedsGerminated, SeedsSown - SeedsGerminated)~ Phase * Soil , 
-                     family = betabinomial(link="logit"), data = exp1)
+                        family = betabinomial(link="logit"), data = exp1)
 
 
 AIC(fullmodel1, fullmodelint1) ### first model without int is lower
@@ -162,12 +163,12 @@ testUniformity(sim)
 ## Estimated Marginal Means
 
 emmeans(fullmodel1,
-  pairwise ~ Soil,
-  type = "response")
+        pairwise ~ Soil,
+        type = "response")
 
 emmeans(fullmodel1,
-  pairwise ~ Phase,
-  type = "response")
+        pairwise ~ Phase,
+        type = "response")
 
 
 ## Model Performance
