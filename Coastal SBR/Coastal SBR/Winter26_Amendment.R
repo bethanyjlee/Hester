@@ -1,5 +1,11 @@
 rm(list=ls())
 
+library(dplyr)
+library(glmmTMB)
+library(car)
+library(broom)
+library(emmeans)
+
 #### Exp 4: Winter 26 - Amendment ####
 
 dat <- read.csv("CompleteSheet.csv")
@@ -45,3 +51,45 @@ emmeans(model4Water,
         pairwise ~ Watering,
         type = "response")
 
+
+cont.vars <- exp4 %>%
+  dplyr::select(SoilOrganicMatter,
+                SoilBulkDensity,
+                SoilVWaterContent,
+                Elevation,
+                MonthPrecipitation)
+
+## Correlation matrix
+cor(cont.vars,
+    use = "complete.obs",
+    method = "pearson")
+
+## Optional visualization
+library(corrplot)
+
+corrplot(cor(cont.vars,
+             use = "complete.obs"),
+         method = "number")
+
+
+envmodel <- glmmTMB(
+  cbind(SeedsGerminated, SeedsSown - SeedsGerminated) ~
+    Site + SeedSource + SoilOrganicMatter +
+    SoilBulkDensity + SoilVWaterContent + Elevation +MonthPrecipitation,
+  family = betabinomial(link = "logit"), data = exp4)
+
+Anova(envmodel, type = "II")
+
+summary(envmodel)
+
+AIC(fullmodel3, envmodel)
+
+### estimated marginal means
+
+emmeans(envmodel,
+        pairwise ~ Site,
+        type = "response")
+
+emmeans(envmodel,
+        pairwise ~ SeedSource,
+        type = "response")

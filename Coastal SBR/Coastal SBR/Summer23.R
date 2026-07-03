@@ -1,5 +1,12 @@
 rm(list=ls())
 
+library(tidyr)
+library(dplyr)
+library(glmmTMB)
+library(car)
+library(broom)
+library(emmeans)
+
 #### Exp 1: Summer Interns ####
 
 dat <- read.csv("CompleteSheet.csv")
@@ -32,8 +39,14 @@ AIC(fullmodel1, fullmodelint1) ### first model without int is lower
 anova(fullmodel1, fullmodelint1)
 
 summary(fullmodel1)
-## Type III Tests
 
+#### include soil data ####
+
+
+
+
+
+## Type III Tests
 
 car::Anova(fullmodel1, type = 3)
 
