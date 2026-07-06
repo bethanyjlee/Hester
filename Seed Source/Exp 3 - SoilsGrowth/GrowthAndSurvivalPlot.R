@@ -143,9 +143,14 @@ fig5a <- ggplot(
   geom_errorbar(aes
                 ( ymin = mean_survival - se_survival,ymax = mean_survival + se_survival),
     width = 0.2,linewidth = 0.8) +
-  geom_text(aes
-            (y = mean_survival + se_survival + 0.05,label = letters),
-    size = 5) +
+  geom_text(
+    aes(
+      y = mean_survival + se_survival,
+      label = letters
+    ),
+    vjust = -0.4,
+    size = 5
+  ) +
   facet_wrap(~ Tidal, ncol = 3,
              labeller = labeller(
                Tidal = c(
@@ -168,9 +173,14 @@ fig5b <- ggplot(
   geom_errorbar(aes
                 (ymin = mean_growth - se_growth, ymax = mean_growth + se_growth),
     width = 0.2,linewidth = 0.8) +
-  geom_text(aes
-            (y = mean_growth + se_growth + 5,label = letters),
-    size = 5) +
+  geom_text(
+    aes(
+      y = mean_growth + se_growth,
+      label = letters
+    ),
+    vjust = -0.4,
+    size = 5
+  ) +
   facet_wrap(~ Tidal, ncol = 3,
              labeller = labeller(
                Tidal = c(
@@ -181,7 +191,10 @@ fig5b <- ggplot(
   labs(x = "Soil Treatment",y = "Final Plant Height (mm)") +
   theme_bw() +
   theme(legend.position = "none",panel.grid.minor = element_blank(),
-    text = element_text(size = 13))
+    text = element_text(size = 13))+
+  scale_y_continuous(
+    expand = expansion(mult = c(0, 0.10))
+  )
 
 #### combine figure ####
 
