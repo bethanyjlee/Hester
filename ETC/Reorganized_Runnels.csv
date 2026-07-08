@@ -53,11 +53,11 @@ Runnel,3,Bank,1,Other sp.,0
 Runnel,3,Bank,1,% cover,40
 Runnel,3,Bank,2,Small PW <10,0
 Runnel,3,Bank,2,Big PW >10,7
-Runnel,3,Bank,2,Other sp.,2 frankenia
+Runnel,3,Bank,2,Other sp.,2
 Runnel,3,Bank,2,% cover,30
 Runnel,3,Bank,3,Small PW <10,0
 Runnel,3,Bank,3,Big PW >10,6
-Runnel,3,Bank,3,Other sp.,frankenia
+Runnel,3,Bank,3,Other sp.,1
 Runnel,3,Bank,3,% cover,
 Runnel,3,Platform,1,Small PW <10,0
 Runnel,3,Platform,1,Big PW >10,0
@@ -69,7 +69,7 @@ Runnel,3,Platform,2,Other sp.,0
 Runnel,3,Platform,2,% cover,0
 Runnel,3,Platform,3,Small PW <10,0
 Runnel,3,Platform,3,Big PW >10,0
-Runnel,3,Platform,3,Other sp.,1 frankenia
+Runnel,3,Platform,3,Other sp.,1
 Runnel,3,Platform,3,% cover,3
 Runnel,4,Bank,1,Small PW <10,0
 Runnel,4,Bank,1,Big PW >10,6
