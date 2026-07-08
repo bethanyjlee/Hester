@@ -2,7 +2,7 @@ library(tidyverse)
 library(vegan)
 library(cluster)
 
-dat <- read.csv("IncompleteSheet.csv")
+dat <- read.csv("CompleteSheet.csv")
 
 ###########################
 # CHECK VARIABLES
@@ -33,8 +33,7 @@ env <- dat %>%
     SoilBulkDensity,
     SoilVWaterContent,
     Elevation,
-    MonthPrecipitation,
-    AnnualPrecipitation
+    MonthPrecipitation
   )
 
 ###########################
@@ -77,6 +76,9 @@ cat("Rows remaining:", nrow(env), "\n")
 
 sum(is.na(env))
 sum(is.na(dat$GermProportion))
+
+env <- env %>%
+  mutate(across(where(is.character), as.factor))
 
 ###########################
 # GOWER DISTANCE

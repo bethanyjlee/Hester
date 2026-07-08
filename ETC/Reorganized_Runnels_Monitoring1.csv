@@ -1,0 +1,481 @@
+Type of Plot,Plot Number,Location Type,Location Number,Measurement Category,Value
+Runnel,1,Bank,1,Small PW <10,0
+Runnel,1,Bank,1,Big PW >10,5
+Runnel,1,Bank,1,Other sp.,0
+Runnel,1,Bank,1,% cover,40
+Runnel,1,Bank,2,Small PW <10,0
+Runnel,1,Bank,2,Big PW >10,4
+Runnel,1,Bank,2,Other sp.,0
+Runnel,1,Bank,2,% cover,20
+Runnel,1,Bank,3,Small PW <10,0
+Runnel,1,Bank,3,Big PW >10,6
+Runnel,1,Bank,3,Other sp.,0
+Runnel,1,Bank,3,% cover,20
+Runnel,1,Platform,1,Small PW <10,0
+Runnel,1,Platform,1,Big PW >10,0
+Runnel,1,Platform,1,Other sp.,0
+Runnel,1,Platform,1,% cover,0
+Runnel,1,Platform,2,Small PW <10,0
+Runnel,1,Platform,2,Big PW >10,0
+Runnel,1,Platform,2,Other sp.,0
+Runnel,1,Platform,2,% cover,0
+Runnel,1,Platform,3,Small PW <10,0
+Runnel,1,Platform,3,Big PW >10,0
+Runnel,1,Platform,3,Other sp.,0
+Runnel,1,Platform,3,% cover,0
+Runnel,2,Bank,1,Small PW <10,0
+Runnel,2,Bank,1,Big PW >10,0
+Runnel,2,Bank,1,Other sp.,0
+Runnel,2,Bank,1,% cover,0
+Runnel,2,Bank,2,Small PW <10,0
+Runnel,2,Bank,2,Big PW >10,0
+Runnel,2,Bank,2,Other sp.,0
+Runnel,2,Bank,2,% cover,2
+Runnel,2,Bank,3,Small PW <10,0
+Runnel,2,Bank,3,Big PW >10,2
+Runnel,2,Bank,3,Other sp.,0
+Runnel,2,Bank,3,% cover,5
+Runnel,2,Platform,1,Small PW <10,0
+Runnel,2,Platform,1,Big PW >10,0
+Runnel,2,Platform,1,Other sp.,0
+Runnel,2,Platform,1,% cover,0
+Runnel,2,Platform,2,Small PW <10,0
+Runnel,2,Platform,2,Big PW >10,0
+Runnel,2,Platform,2,Other sp.,0
+Runnel,2,Platform,2,% cover,0
+Runnel,2,Platform,3,Small PW <10,0
+Runnel,2,Platform,3,Big PW >10,0
+Runnel,2,Platform,3,Other sp.,0
+Runnel,2,Platform,3,% cover,0
+Runnel,3,Bank,1,Small PW <10,0
+Runnel,3,Bank,1,Big PW >10,10
+Runnel,3,Bank,1,Other sp.,0
+Runnel,3,Bank,1,% cover,40
+Runnel,3,Bank,2,Small PW <10,0
+Runnel,3,Bank,2,Big PW >10,7
+Runnel,3,Bank,2,Other sp.,2 frankenia
+Runnel,3,Bank,2,% cover,30
+Runnel,3,Bank,3,Small PW <10,0
+Runnel,3,Bank,3,Big PW >10,6
+Runnel,3,Bank,3,Other sp.,frankenia
+Runnel,3,Bank,3,% cover,
+Runnel,3,Platform,1,Small PW <10,0
+Runnel,3,Platform,1,Big PW >10,0
+Runnel,3,Platform,1,Other sp.,0
+Runnel,3,Platform,1,% cover,0
+Runnel,3,Platform,2,Small PW <10,0
+Runnel,3,Platform,2,Big PW >10,0
+Runnel,3,Platform,2,Other sp.,0
+Runnel,3,Platform,2,% cover,0
+Runnel,3,Platform,3,Small PW <10,0
+Runnel,3,Platform,3,Big PW >10,0
+Runnel,3,Platform,3,Other sp.,1 frankenia
+Runnel,3,Platform,3,% cover,3
+Runnel,4,Bank,1,Small PW <10,0
+Runnel,4,Bank,1,Big PW >10,6
+Runnel,4,Bank,1,Other sp.,0
+Runnel,4,Bank,1,% cover,20
+Runnel,4,Bank,2,Small PW <10,0
+Runnel,4,Bank,2,Big PW >10,4
+Runnel,4,Bank,2,Other sp.,0
+Runnel,4,Bank,2,% cover,15
+Runnel,4,Bank,3,Small PW <10,0
+Runnel,4,Bank,3,Big PW >10,10
+Runnel,4,Bank,3,Other sp.,0
+Runnel,4,Bank,3,% cover,45
+Runnel,4,Platform,1,Small PW <10,0
+Runnel,4,Platform,1,Big PW >10,4
+Runnel,4,Platform,1,Other sp.,0
+Runnel,4,Platform,1,% cover,20
+Runnel,4,Platform,2,Small PW <10,0
+Runnel,4,Platform,2,Big PW >10,0
+Runnel,4,Platform,2,Other sp.,0
+Runnel,4,Platform,2,% cover,1
+Runnel,4,Platform,3,Small PW <10,0
+Runnel,4,Platform,3,Big PW >10,2
+Runnel,4,Platform,3,Other sp.,0
+Runnel,4,Platform,3,% cover,5
+Runnel,5,Bank,1,Small PW <10,1
+Runnel,5,Bank,1,Big PW >10,3
+Runnel,5,Bank,1,Other sp.,0
+Runnel,5,Bank,1,% cover,5
+Runnel,5,Bank,2,Small PW <10,0
+Runnel,5,Bank,2,Big PW >10,0
+Runnel,5,Bank,2,Other sp.,0
+Runnel,5,Bank,2,% cover,0
+Runnel,5,Bank,3,Small PW <10,0
+Runnel,5,Bank,3,Big PW >10,5
+Runnel,5,Bank,3,Other sp.,0
+Runnel,5,Bank,3,% cover,7
+Runnel,5,Platform,1,Small PW <10,0
+Runnel,5,Platform,1,Big PW >10,10
+Runnel,5,Platform,1,Other sp.,0
+Runnel,5,Platform,1,% cover,10
+Runnel,5,Platform,2,Small PW <10,0
+Runnel,5,Platform,2,Big PW >10,0
+Runnel,5,Platform,2,Other sp.,0
+Runnel,5,Platform,2,% cover,0
+Runnel,5,Platform,3,Small PW <10,0
+Runnel,5,Platform,3,Big PW >10,0
+Runnel,5,Platform,3,Other sp.,0
+Runnel,5,Platform,3,% cover,0
+Runnel,6,Bank,1,Small PW <10,0
+Runnel,6,Bank,1,Big PW >10,4
+Runnel,6,Bank,1,Other sp.,0
+Runnel,6,Bank,1,% cover,15
+Runnel,6,Bank,2,Small PW <10,0
+Runnel,6,Bank,2,Big PW >10,0
+Runnel,6,Bank,2,Other sp.,0
+Runnel,6,Bank,2,% cover,0
+Runnel,6,Bank,3,Small PW <10,0
+Runnel,6,Bank,3,Big PW >10,0
+Runnel,6,Bank,3,Other sp.,0
+Runnel,6,Bank,3,% cover,0
+Runnel,6,Platform,1,Small PW <10,0
+Runnel,6,Platform,1,Big PW >10,0
+Runnel,6,Platform,1,Other sp.,0
+Runnel,6,Platform,1,% cover,0
+Runnel,6,Platform,2,Small PW <10,0
+Runnel,6,Platform,2,Big PW >10,0
+Runnel,6,Platform,2,Other sp.,0
+Runnel,6,Platform,2,% cover,0
+Runnel,6,Platform,3,Small PW <10,0
+Runnel,6,Platform,3,Big PW >10,0
+Runnel,6,Platform,3,Other sp.,0
+Runnel,6,Platform,3,% cover,0
+Runnel,7,Bank,1,Small PW <10,0
+Runnel,7,Bank,1,Big PW >10,1
+Runnel,7,Bank,1,Other sp.,0
+Runnel,7,Bank,1,% cover,5
+Runnel,7,Bank,2,Small PW <10,0
+Runnel,7,Bank,2,Big PW >10,0
+Runnel,7,Bank,2,Other sp.,0
+Runnel,7,Bank,2,% cover,2
+Runnel,7,Bank,3,Small PW <10,1
+Runnel,7,Bank,3,Big PW >10,4
+Runnel,7,Bank,3,Other sp.,0
+Runnel,7,Bank,3,% cover,5
+Runnel,7,Platform,1,Small PW <10,0
+Runnel,7,Platform,1,Big PW >10,0
+Runnel,7,Platform,1,Other sp.,0
+Runnel,7,Platform,1,% cover,0
+Runnel,7,Platform,2,Small PW <10,0
+Runnel,7,Platform,2,Big PW >10,0
+Runnel,7,Platform,2,Other sp.,0
+Runnel,7,Platform,2,% cover,0
+Runnel,7,Platform,3,Small PW <10,0
+Runnel,7,Platform,3,Big PW >10,0
+Runnel,7,Platform,3,Other sp.,0
+Runnel,7,Platform,3,% cover,0
+Runnel,8,Bank,1,Small PW <10,0
+Runnel,8,Bank,1,Big PW >10,3
+Runnel,8,Bank,1,Other sp.,0
+Runnel,8,Bank,1,% cover,5
+Runnel,8,Bank,2,Small PW <10,0
+Runnel,8,Bank,2,Big PW >10,1
+Runnel,8,Bank,2,Other sp.,0
+Runnel,8,Bank,2,% cover,5
+Runnel,8,Bank,3,Small PW <10,0
+Runnel,8,Bank,3,Big PW >10,7
+Runnel,8,Bank,3,Other sp.,0
+Runnel,8,Bank,3,% cover,30
+Runnel,8,Platform,1,Small PW <10,0
+Runnel,8,Platform,1,Big PW >10,0
+Runnel,8,Platform,1,Other sp.,0
+Runnel,8,Platform,1,% cover,0
+Runnel,8,Platform,2,Small PW <10,0
+Runnel,8,Platform,2,Big PW >10,0
+Runnel,8,Platform,2,Other sp.,0
+Runnel,8,Platform,2,% cover,0
+Runnel,8,Platform,3,Small PW <10,0
+Runnel,8,Platform,3,Big PW >10,0
+Runnel,8,Platform,3,Other sp.,0
+Runnel,8,Platform,3,% cover,0
+Runnel,9,Bank,1,Small PW <10,0
+Runnel,9,Bank,1,Big PW >10,2
+Runnel,9,Bank,1,Other sp.,0
+Runnel,9,Bank,1,% cover,10
+Runnel,9,Bank,2,Small PW <10,0
+Runnel,9,Bank,2,Big PW >10,0
+Runnel,9,Bank,2,Other sp.,0
+Runnel,9,Bank,2,% cover,1
+Runnel,9,Bank,3,Small PW <10,0
+Runnel,9,Bank,3,Big PW >10,0
+Runnel,9,Bank,3,Other sp.,0
+Runnel,9,Bank,3,% cover,2
+Runnel,9,Platform,1,Small PW <10,0
+Runnel,9,Platform,1,Big PW >10,0
+Runnel,9,Platform,1,Other sp.,0
+Runnel,9,Platform,1,% cover,1
+Runnel,9,Platform,2,Small PW <10,0
+Runnel,9,Platform,2,Big PW >10,0
+Runnel,9,Platform,2,Other sp.,0
+Runnel,9,Platform,2,% cover,0
+Runnel,9,Platform,3,Small PW <10,2
+Runnel,9,Platform,3,Big PW >10,2
+Runnel,9,Platform,3,Other sp.,0
+Runnel,9,Platform,3,% cover,2
+Runnel,10,Bank,1,Small PW <10,0
+Runnel,10,Bank,1,Big PW >10,0
+Runnel,10,Bank,1,Other sp.,0
+Runnel,10,Bank,1,% cover,0
+Runnel,10,Bank,2,Small PW <10,0
+Runnel,10,Bank,2,Big PW >10,0
+Runnel,10,Bank,2,Other sp.,0
+Runnel,10,Bank,2,% cover,0
+Runnel,10,Bank,3,Small PW <10,0
+Runnel,10,Bank,3,Big PW >10,0
+Runnel,10,Bank,3,Other sp.,0
+Runnel,10,Bank,3,% cover,1
+Runnel,10,Platform,1,Small PW <10,0
+Runnel,10,Platform,1,Big PW >10,0
+Runnel,10,Platform,1,Other sp.,0
+Runnel,10,Platform,1,% cover,0
+Runnel,10,Platform,2,Small PW <10,0
+Runnel,10,Platform,2,Big PW >10,0
+Runnel,10,Platform,2,Other sp.,0
+Runnel,10,Platform,2,% cover,0
+Runnel,10,Platform,3,Small PW <10,0
+Runnel,10,Platform,3,Big PW >10,0
+Runnel,10,Platform,3,Other sp.,0
+Runnel,10,Platform,3,% cover,0
+Control ,1,Bank,1,Small PW <10,0
+Control ,1,Bank,1,Big PW >10,7
+Control ,1,Bank,1,Other sp.,0
+Control ,1,Bank,1,% cover,35
+Control ,1,Bank,2,Small PW <10,0
+Control ,1,Bank,2,Big PW >10,16
+Control ,1,Bank,2,Other sp.,0
+Control ,1,Bank,2,% cover,20
+Control ,1,Bank,3,Small PW <10,0
+Control ,1,Bank,3,Big PW >10,7
+Control ,1,Bank,3,Other sp.,0
+Control ,1,Bank,3,% cover,20
+Control ,1,Platform,1,Small PW <10,1
+Control ,1,Platform,1,Big PW >10,0
+Control ,1,Platform,1,Other sp.,0
+Control ,1,Platform,1,% cover,1
+Control ,1,Platform,2,Small PW <10,0
+Control ,1,Platform,2,Big PW >10,2
+Control ,1,Platform,2,Other sp.,0
+Control ,1,Platform,2,% cover,10
+Control ,1,Platform,3,Small PW <10,7
+Control ,1,Platform,3,Big PW >10,2
+Control ,1,Platform,3,Other sp.,0
+Control ,1,Platform,3,% cover,10
+Control ,2,Bank,1,Small PW <10,1
+Control ,2,Bank,1,Big PW >10,7
+Control ,2,Bank,1,Other sp.,0
+Control ,2,Bank,1,% cover,70
+Control ,2,Bank,2,Small PW <10,2
+Control ,2,Bank,2,Big PW >10,6
+Control ,2,Bank,2,Other sp.,0
+Control ,2,Bank,2,% cover,15
+Control ,2,Bank,3,Small PW <10,0
+Control ,2,Bank,3,Big PW >10,12
+Control ,2,Bank,3,Other sp.,0
+Control ,2,Bank,3,% cover,40
+Control ,2,Platform,1,Small PW <10,2
+Control ,2,Platform,1,Big PW >10,2
+Control ,2,Platform,1,Other sp.,0
+Control ,2,Platform,1,% cover,5
+Control ,2,Platform,2,Small PW <10,2
+Control ,2,Platform,2,Big PW >10,0
+Control ,2,Platform,2,Other sp.,0
+Control ,2,Platform,2,% cover,1
+Control ,2,Platform,3,Small PW <10,3
+Control ,2,Platform,3,Big PW >10,0
+Control ,2,Platform,3,Other sp.,0
+Control ,2,Platform,3,% cover,2
+Control ,3,Bank,1,Small PW <10,0
+Control ,3,Bank,1,Big PW >10,7
+Control ,3,Bank,1,Other sp.,0
+Control ,3,Bank,1,% cover,25
+Control ,3,Bank,2,Small PW <10,0
+Control ,3,Bank,2,Big PW >10,3
+Control ,3,Bank,2,Other sp.,0
+Control ,3,Bank,2,% cover,10
+Control ,3,Bank,3,Small PW <10,0
+Control ,3,Bank,3,Big PW >10,10
+Control ,3,Bank,3,Other sp.,2 franks
+Control ,3,Bank,3,% cover,40
+Control ,3,Platform,1,Small PW <10,0
+Control ,3,Platform,1,Big PW >10,0
+Control ,3,Platform,1,Other sp.,0
+Control ,3,Platform,1,% cover,1
+Control ,3,Platform,2,Small PW <10,0
+Control ,3,Platform,2,Big PW >10,6
+Control ,3,Platform,2,Other sp.,0
+Control ,3,Platform,2,% cover,30
+Control ,3,Platform,3,Small PW <10,10
+Control ,3,Platform,3,Big PW >10,11
+Control ,3,Platform,3,Other sp.,0
+Control ,3,Platform,3,% cover,40
+Control ,4,Bank,1,Small PW <10,0
+Control ,4,Bank,1,Big PW >10,5
+Control ,4,Bank,1,Other sp.,0
+Control ,4,Bank,1,% cover,30
+Control ,4,Bank,2,Small PW <10,0
+Control ,4,Bank,2,Big PW >10,1
+Control ,4,Bank,2,Other sp.,0
+Control ,4,Bank,2,% cover,5
+Control ,4,Bank,3,Small PW <10,0
+Control ,4,Bank,3,Big PW >10,3
+Control ,4,Bank,3,Other sp.,0
+Control ,4,Bank,3,% cover,5
+Control ,4,Platform,1,Small PW <10,0
+Control ,4,Platform,1,Big PW >10,3
+Control ,4,Platform,1,Other sp.,0
+Control ,4,Platform,1,% cover,10
+Control ,4,Platform,2,Small PW <10,0
+Control ,4,Platform,2,Big PW >10,6
+Control ,4,Platform,2,Other sp.,0
+Control ,4,Platform,2,% cover,15
+Control ,4,Platform,3,Small PW <10,0
+Control ,4,Platform,3,Big PW >10,4
+Control ,4,Platform,3,Other sp.,0
+Control ,4,Platform,3,% cover,10
+Control ,5,Bank,1,Small PW <10,0
+Control ,5,Bank,1,Big PW >10,2
+Control ,5,Bank,1,Other sp.,0
+Control ,5,Bank,1,% cover,10
+Control ,5,Bank,2,Small PW <10,0
+Control ,5,Bank,2,Big PW >10,2
+Control ,5,Bank,2,Other sp.,0
+Control ,5,Bank,2,% cover,2
+Control ,5,Bank,3,Small PW <10,2
+Control ,5,Bank,3,Big PW >10,11
+Control ,5,Bank,3,Other sp.,0
+Control ,5,Bank,3,% cover,10
+Control ,5,Platform,1,Small PW <10,0
+Control ,5,Platform,1,Big PW >10,0
+Control ,5,Platform,1,Other sp.,0
+Control ,5,Platform,1,% cover,0
+Control ,5,Platform,2,Small PW <10,0
+Control ,5,Platform,2,Big PW >10,0
+Control ,5,Platform,2,Other sp.,0
+Control ,5,Platform,2,% cover,2
+Control ,5,Platform,3,Small PW <10,0
+Control ,5,Platform,3,Big PW >10,4
+Control ,5,Platform,3,Other sp.,0
+Control ,5,Platform,3,% cover,15
+Control ,6,Bank,1,Small PW <10,0
+Control ,6,Bank,1,Big PW >10,5
+Control ,6,Bank,1,Other sp.,0
+Control ,6,Bank,1,% cover,20
+Control ,6,Bank,2,Small PW <10,0
+Control ,6,Bank,2,Big PW >10,0
+Control ,6,Bank,2,Other sp.,0
+Control ,6,Bank,2,% cover,0
+Control ,6,Bank,3,Small PW <10,0
+Control ,6,Bank,3,Big PW >10,6
+Control ,6,Bank,3,Other sp.,0
+Control ,6,Bank,3,% cover,15
+Control ,6,Platform,1,Small PW <10,0
+Control ,6,Platform,1,Big PW >10,0
+Control ,6,Platform,1,Other sp.,0
+Control ,6,Platform,1,% cover,0
+Control ,6,Platform,2,Small PW <10,0
+Control ,6,Platform,2,Big PW >10,0
+Control ,6,Platform,2,Other sp.,0
+Control ,6,Platform,2,% cover,0
+Control ,6,Platform,3,Small PW <10,0
+Control ,6,Platform,3,Big PW >10,0
+Control ,6,Platform,3,Other sp.,0
+Control ,6,Platform,3,% cover,0
+Control ,7,Bank,1,Small PW <10,0
+Control ,7,Bank,1,Big PW >10,7
+Control ,7,Bank,1,Other sp.,0
+Control ,7,Bank,1,% cover,30
+Control ,7,Bank,2,Small PW <10,0
+Control ,7,Bank,2,Big PW >10,5
+Control ,7,Bank,2,Other sp.,0
+Control ,7,Bank,2,% cover,10
+Control ,7,Bank,3,Small PW <10,0
+Control ,7,Bank,3,Big PW >10,13
+Control ,7,Bank,3,Other sp.,0
+Control ,7,Bank,3,% cover,40
+Control ,7,Platform,1,Small PW <10,0
+Control ,7,Platform,1,Big PW >10,0
+Control ,7,Platform,1,Other sp.,0
+Control ,7,Platform,1,% cover,0
+Control ,7,Platform,2,Small PW <10,0
+Control ,7,Platform,2,Big PW >10,0
+Control ,7,Platform,2,Other sp.,0
+Control ,7,Platform,2,% cover,0
+Control ,7,Platform,3,Small PW <10,0
+Control ,7,Platform,3,Big PW >10,6
+Control ,7,Platform,3,Other sp.,0
+Control ,7,Platform,3,% cover,20
+Control ,8,Bank,1,Small PW <10,0
+Control ,8,Bank,1,Big PW >10,2
+Control ,8,Bank,1,Other sp.,0
+Control ,8,Bank,1,% cover,10
+Control ,8,Bank,2,Small PW <10,0
+Control ,8,Bank,2,Big PW >10,0
+Control ,8,Bank,2,Other sp.,0
+Control ,8,Bank,2,% cover,1
+Control ,8,Bank,3,Small PW <10,0
+Control ,8,Bank,3,Big PW >10,0
+Control ,8,Bank,3,Other sp.,0
+Control ,8,Bank,3,% cover,5
+Control ,8,Platform,1,Small PW <10,0
+Control ,8,Platform,1,Big PW >10,0
+Control ,8,Platform,1,Other sp.,0
+Control ,8,Platform,1,% cover,0
+Control ,8,Platform,2,Small PW <10,0
+Control ,8,Platform,2,Big PW >10,0
+Control ,8,Platform,2,Other sp.,0
+Control ,8,Platform,2,% cover,0
+Control ,8,Platform,3,Small PW <10,0
+Control ,8,Platform,3,Big PW >10,2
+Control ,8,Platform,3,Other sp.,0
+Control ,8,Platform,3,% cover,5
+Control ,9,Bank,1,Small PW <10,0
+Control ,9,Bank,1,Big PW >10,1
+Control ,9,Bank,1,Other sp.,0
+Control ,9,Bank,1,% cover,5
+Control ,9,Bank,2,Small PW <10,0
+Control ,9,Bank,2,Big PW >10,0
+Control ,9,Bank,2,Other sp.,0
+Control ,9,Bank,2,% cover,0
+Control ,9,Bank,3,Small PW <10,0
+Control ,9,Bank,3,Big PW >10,0
+Control ,9,Bank,3,Other sp.,0
+Control ,9,Bank,3,% cover,2
+Control ,9,Platform,1,Small PW <10,0
+Control ,9,Platform,1,Big PW >10,0
+Control ,9,Platform,1,Other sp.,0
+Control ,9,Platform,1,% cover,0
+Control ,9,Platform,2,Small PW <10,0
+Control ,9,Platform,2,Big PW >10,0
+Control ,9,Platform,2,Other sp.,0
+Control ,9,Platform,2,% cover,0
+Control ,9,Platform,3,Small PW <10,0
+Control ,9,Platform,3,Big PW >10,0
+Control ,9,Platform,3,Other sp.,0
+Control ,9,Platform,3,% cover,0
+Control ,10,Bank,1,Small PW <10,0
+Control ,10,Bank,1,Big PW >10,7
+Control ,10,Bank,1,Other sp.,0
+Control ,10,Bank,1,% cover,50
+Control ,10,Bank,2,Small PW <10,0
+Control ,10,Bank,2,Big PW >10,2
+Control ,10,Bank,2,Other sp.,0
+Control ,10,Bank,2,% cover,3
+Control ,10,Bank,3,Small PW <10,0
+Control ,10,Bank,3,Big PW >10,4
+Control ,10,Bank,3,Other sp.,0
+Control ,10,Bank,3,% cover,7
+Control ,10,Platform,1,Small PW <10,0
+Control ,10,Platform,1,Big PW >10,0
+Control ,10,Platform,1,Other sp.,0
+Control ,10,Platform,1,% cover,0
+Control ,10,Platform,2,Small PW <10,2
+Control ,10,Platform,2,Big PW >10,0
+Control ,10,Platform,2,Other sp.,0
+Control ,10,Platform,2,% cover,1
+Control ,10,Platform,3,Small PW <10,0
+Control ,10,Platform,3,Big PW >10,0
+Control ,10,Platform,3,Other sp.,0
+Control ,10,Platform,3,% cover,0

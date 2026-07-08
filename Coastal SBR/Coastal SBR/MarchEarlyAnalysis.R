@@ -78,3 +78,87 @@ ggplot(data_summary_prop,
     strip.background = element_rect(fill = "grey90"),
     legend.position = "none")
 
+#### Stats ####
+recip <- dataready %>%
+  filter(SeedSource != "Control")
+
+recip$Home <- ifelse(
+  as.character(recip$SeedSource) == as.character(recip$SiteSown),
+  "Home",
+  "Away"
+)
+
+recip$Home <- factor(recip$Home)
+
+library(car)
+
+mod_home <- glm(
+  cbind(successes, failures) ~ SiteSown * Home,
+  family = binomial,
+  data = recip
+)
+
+summary(mod_home)
+
+Anova(mod_home, type = "III")
+
+library(emmeans)
+
+emm <- emmeans(mod_home,
+               ~ Home | SiteSown,
+               type = "response")
+
+emm
+pairs(emm)
+
+mod_source <- glm(
+  cbind(successes, failures) ~ SiteSown * SeedSource,
+  family=binomial,
+  data=recip
+)
+
+Anova(mod_source, type="III")
+
+emm_source <- emmeans(mod_source,
+                      ~ SeedSource | SiteSown,
+                      type="response")
+
+pairs(emm_source, adjust="tukey")
+
+#### analyze each site separately ####
+estrada <- subset(recip, SiteSown == "Estrada")
+
+glm(
+  cbind(successes, failures) ~ Home,
+  family = binomial,
+  data = estrada
+)
+
+shark <- subset(recip, SiteSown == "SharkFlats")
+
+glm(
+  cbind(successes, failures) ~ Home,
+  family = binomial,
+  data = shark
+)
+
+
+estrada_mod <- glm(
+  cbind(successes, failures) ~ Home,
+  family = binomial,
+  data = estrada
+)
+
+shark_mod <- glm(
+  cbind(successes, failures) ~ Home,
+  family = binomial,
+  data = shark
+)
+
+summary(estrada_mod)
+
+summary(shark_mod)
+
+drop1(estrada_mod, test = "Chisq")
+
+drop1(shark_mod, test = "Chisq")
