@@ -12,6 +12,11 @@ library(tidyverse)
 #### Data ####
 fulldata <- read.csv("FullGermElkhornSeedSource.csv")
 
+fulldata$Soil.Type <- dplyr::recode(
+  fulldata$Soil.Type,
+  "Hester" = "Restoration Site"
+)
+
 # Reshape from wide (dates) → long
 data_long <- fulldata %>%
   pivot_longer(
@@ -23,7 +28,7 @@ data_long <- fulldata %>%
 # Clean + format
 dataready <- data_long %>%
   mutate(
-    Soils = factor(Soil.Type, levels = c("Hester", "Combo", "Potting Soil")),
+    Soils = factor(Soil.Type, levels = c("Restoration Site", "Combo", "Potting Soil")),
     Seed.Source = factor(Seed.Source),
     SourceID = factor(SiteID),
     Tidal = factor(TidalCat),
@@ -266,7 +271,7 @@ library(multcomp)  # for cld
 # 1) Base tables for post hoc plots
 emm_df <- as.data.frame(summary(emm)) %>%
   dplyr::mutate(
-    Soils = factor(Soils, levels = c("Hester","Combo","Potting Soil")),
+    Soils = factor(Soils, levels = c("Restoration Site", "Combo", "Potting Soil")),
     pct   = prob * 100)
 
 letters_df <- multcomp::cld(emm, adjust = "sidak", Letters = letters, type = "response") %>%
@@ -316,7 +321,7 @@ long <- fulldata %>%
 # For plotting only:
 dataready <- long %>%
   mutate(
-    Soils       = factor(Soil.Type, levels = c("Hester","Combo","Potting Soil")),
+    Soils       = factor(Soil.Type, levels = c("Restoration Site", "Combo", "Potting Soil")),
     Seed.Source = factor(SiteID),
     Seeds       = as.numeric(Seeds),
     DaysAfterSowing = as.integer(difftime(Date, sowing_date, units = "days")),  # 0 on sow date
@@ -366,7 +371,11 @@ gg_raw_ts <- ggplot(raw_ts, aes(x = DaysAfterSowing, y = mean_prop,
 
 gg_raw_ts
 
-soil_colors<- c(Hester = "#999333", Combo = '#aa4499', "Potting Soil" = '#661100')
+soil_colors <- c(
+  "Restoration Site" = "#999333",
+  Combo = "#aa4499",
+  "Potting Soil" = "#661100"
+)
 
 #### MS FIgure 5 ####
 

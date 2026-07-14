@@ -29,10 +29,15 @@ names(greenhouse) <- c(
   "Date2", "Survivors2", "Height2",
   "Date3", "Survivors3", "Height3")
 
+greenhouse$Soil.Type <- recode(
+  greenhouse$Soil.Type,
+  "Hester" = "Restoration Site"
+)
+
 #### COLORS ####
 
 soil_colors <- c(
-  "Hester" = "#999333",
+  "Restoration Site" = "#999333",
   "Combo" = "#aa4499",
   "Potting Soil" = "#661100"
 )
@@ -58,7 +63,7 @@ surv_plot_data <- dat2 %>%
     SurvivalProp = Final / Start,
     SoilType = factor(
       Soil.Type.x,
-      levels = c("Hester", "Combo", "Potting Soil")),
+      levels = c("Restoration Site", "Combo", "Potting Soil")),
     Tidal = factor(
       TidalCat.x,
       levels = c("Natural", "Diked", "Restored"))) %>%
@@ -100,9 +105,9 @@ growth_long <- greenhouse %>%
     names_to = c(".value", "Timepoint"),
     names_pattern = "(Date|Survivors|Height)([0-9]+)") %>%
   mutate( Height = as.numeric(Height),
-    SoilType = factor(
-      Soil.Type,
-      levels = c("Hester", "Combo", "Potting Soil")),
+          SoilType = factor(
+            Soil.Type,
+            levels = c("Restoration Site", "Combo", "Potting Soil")),
     Tidal = factor(
       TidalCat,
       levels = c("Natural", "Diked", "Restored")))
