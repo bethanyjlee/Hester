@@ -1,10 +1,12 @@
-rm(list=ls())
+rm(list = ls())
 
 #### Exp 2: Winter 24 ####
 
-dat <- read.csv("CompleteSheet.csv")
+library(dplyr)
+library(glmmTMB)
 
-dat <- dat %>%
+dat <- read.csv("CompleteSheet.csv") %>%
+  filter(Experiment == "Winter24") %>%   # Change to the exact value in your data if needed
   mutate(
     GermProportion = SeedsGerminated / SeedsSown,
     Soil = factor(Soil),
@@ -14,8 +16,8 @@ dat <- dat %>%
     SeedSource = factor(SeedSource),
     Site = factor(Site),
     Experiment = factor(Experiment),
-    Phase = factor(Phase))
-
+    Phase = factor(Phase)
+  )
 
 exp2<-dat %>% filter(Experiment == "Winter24")
 
