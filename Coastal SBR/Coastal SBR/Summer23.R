@@ -6,6 +6,7 @@ library(glmmTMB)
 library(car)
 library(broom)
 library(emmeans)
+library(ggplot2)
 
 #### Exp 1: Summer Interns ####
 
@@ -82,3 +83,14 @@ emmeans(fullmodel1,
 performance::check_model(fullmodel1)
 
 performance::r2(fullmodel1)
+
+
+#### make graph ####
+
+ggplot(exp1, aes(x = Soil, y = GermProportion, fill = Soil)) +
+  geom_col(width = 0.7) +
+    facet_wrap(~ Phase) +
+  theme_bw(base_size = 12) +
+  labs(y = "Proportion Germinated") +
+  theme(axis.text.x = element_text(angle = 0, hjust = 0.5))
+  
