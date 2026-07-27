@@ -1,0 +1,21 @@
+Number (E to W),Walled,Groundwater-influenced,Percent Cover,"Pickleweed seedlings (<2"") Category","Pickleweed Adults (>2"") Category",SeedlingsQ1,AdultsQ1,SeedlingsQ2.5,AdultsQ2.5,SeedlingsQ4,AdultsQ4,Sperg ,Inside Plantings Corner,Outside Plantings Corner,Distichlis,Frankenia,Jaumea,Breached?,Holding water?,Picture Taken?,Notes
+1,Yes,No,1,Low,Low,0,0,0,0,0,0,0,NW,--,2,3,0,TRUE,FALSE,TRUE,
+1,No,No,0.5,0,0,0,0,0,0,0,0,0,--,NW,2,3,0,FALSE,FALSE,TRUE,
+2,Yes,No,0.5,0,0,0,0,0,0,0,0,0,NW,--,2,4,0,TRUE,FALSE,TRUE,
+2,No,No,1,0,Low,0,0,0,0,0,0,0,--,NW,4,0,0,FALSE,FALSE,TRUE,
+3,Yes,No,1,Low,Low,0,0,0,0,0,0,0,NW,--,4,5,0,TRUE,FALSE,TRUE,Small patch of Spergularia in this garden
+3,No,No,1,0,Low,0,0,0,0,0,0,0,--,NW,0,4,0,FALSE,FALSE,TRUE,
+4,Yes,No,2,Low,Low,0,2,0,0,0,0,0,NW,--,3,5,0,TRUE,FALSE,TRUE,
+4,No,No,0.5,0,0,0,0,0,0,0,0,0,--,NW,0,1,0,FALSE,FALSE,TRUE,
+5,Yes,No,0.5,0,0,0,0,0,0,0,0,0,NW,--,2,4,0,TRUE,FALSE,TRUE,
+5,No,No,0.5,0,0,0,0,0,0,0,0,0,--,NW,1,3,0,FALSE,FALSE,TRUE,
+6,Yes,Yes,12,Med,Med,0,3,0,1,3,0,0,SW,--,0,3,0,TRUE,FALSE,TRUE,"There are a lot of smaller adult pickleweeds (>2"") in this garden, but particularly around the edges (this is a trend across most of the gardens where there is higher vegetation coverage: a significant amount of growth is highly concentrated along the edges of the walls, so if the quadrats had been placed along the edges, the data would probably be quire different, especially for gardens 6-10)"
+6,No,Yes,20,Low,Low,0,0,0,0,0,2,2,--,NW,5,5,5,FALSE,FALSE,TRUE,"A low number of large, spreading adult pickleweeds"
+7,Yes,Yes,20,Med,Low,31,0,25,2,0,2,3,NW,--,2,5,0,TRUE,FALSE,TRUE,"Note that it was quite difficult to determine whether or not seedlings were emerging from rhizomes or seeds, but we did our best to probe around the roots and assess proximity to nearby large adults"
+7,No,Yes,30,Low,Med,0,3,0,8,0,3,0,--,NW,2,5,0,FALSE,FALSE,TRUE,
+8,Yes,Yes,20,Med,Med,23,7,0,3,0,3,0,SW,--,0,2,0,TRUE,FALSE,TRUE,
+8,No,Yes,15,Low,Low,1,1,0,0,0,3,0,--,NE,1,5,0,FALSE,FALSE,TRUE,
+9,Yes,Yes,10,Low,Med,0,4,7,3,2,5,9,NE,--,5,3,3,TRUE,FALSE,TRUE,"Spergularia is thriving along the edges of the walls in this garden, and the 5 Distichlis look the healthiest of all the plots"
+9,No,Yes,35,Low,Med,1,2,1,9,0,5,0,--,NE,1,5,1,FALSE,FALSE,TRUE,"Lots of Spergularia in this garden too, but more of it looks wilted/dead"
+10,Yes,Yes,5,Low,Med,3,2,0,8,4,5,28,NW,--,5,4,3,TRUE,FALSE,TRUE,"Despite having a lot of adult pickeweeds in this plot, they are leggy and don't add much to overall vegetation cover"
+10,No,Yes,8,Low,Med,0,2,0,4,0,4,0,--,NW,0,5,0,FALSE,FALSE,TRUE,"For gardens 6-10, I wonder if there is more vegetation coverage here not because of the walls but because of the soil/groundwater/fertilization from the rookery? "
