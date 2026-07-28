@@ -245,3 +245,71 @@ mod.jaum <- glmmTMB(
 )
 
 car::Anova(mod.jaum)
+
+
+
+library(tidyr)
+
+paired_seedlings <- seedlings %>%
+  select(`Number..E.to.W.`, Quadrat, Walled, Count) %>%
+  pivot_wider(
+    names_from = Walled,
+    values_from = Count
+  ) %>%
+  drop_na()
+
+# If approximately normal
+t.test(
+  paired_seedlings$Yes,
+  paired_seedlings$No,
+  paired = TRUE
+)
+
+# If not normal (recommended for count data)
+wilcox.test(
+  paired_seedlings$Yes,
+  paired_seedlings$No,
+  paired = TRUE,
+  exact = FALSE
+)
+
+
+
+##### Effect of groundwater influence #####
+
+seedlings <- seedlings %>%
+  mutate(
+    GroundwaterInfluenced = factor(Groundwater.influenced)
+  )
+
+mod.gw <- glmmTMB(
+  Count ~ Walled + GroundwaterInfluenced +
+    (1 | Number..E.to.W.),
+  family = nbinom2(),
+  data = seedlings
+)
+
+summary(mod.gw)
+car::Anova(mod.gw)
+
+mod.gw.int <- glmmTMB(
+  Count ~ Walled * GroundwaterInfluenced +
+    (1 | Number..E.to.W.),
+  family = nbinom2(),
+  data = seedlings
+)
+
+summary(mod.gw.int)
+car::Anova(mod.gw.int)
+
+library(emmeans)
+emmeans(mod.gw.int, pairwise ~ Walled | GroundwaterInfluenced,
+        type = "response")
+
+with(seedlings, table(GroundwaterInfluenced, Walled))
+
+aggregate(
+  Count ~ GroundwaterInfluenced + Walled,
+  data = seedlings,
+  summary
+)

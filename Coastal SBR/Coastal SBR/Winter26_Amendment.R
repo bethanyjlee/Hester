@@ -93,3 +93,53 @@ emmeans(envmodel,
 emmeans(envmodel,
         pairwise ~ SeedSource,
         type = "response")
+
+
+#### make graph####
+
+library(dplyr)
+library(ggplot2)
+library(scales)
+
+## Summarize Phase data (Ambient soil only)
+phase_plot <- ambient %>%
+  group_by(Phase) %>%
+  summarise(
+    Germination = sum(SeedsGerminated) / sum(SeedsSown),
+    .groups = "drop"
+  ) %>%
+  mutate(Treatment = Phase,
+         Variable = "Phase")
+
+## Summarize Watering data (Phase 3 only)
+water_plot <- phase3 %>%
+  group_by(Watering) %>%
+  summarise(
+    Germination = sum(SeedsGerminated) / sum(SeedsSown),
+    .groups = "drop"
+  ) %>%
+  mutate(Treatment = Watering,
+         Variable = "Watering")
+
+plot_dat <- bind_rows(phase_plot, water_plot)
+
+ggplot(plot_dat,
+       aes(x = Treatment, y = Germination)) +
+  geom_col(fill = "darkseagreen3",
+           color = "black",
+           width = 0.7) +
+  facet_wrap(~Variable, scales = "free_x") +
+  scale_y_continuous(
+    labels = percent_format(accuracy = 0.1),
+    expand = expansion(mult = c(0, 0.05))
+  ) +
+  labs(
+    x = NULL,
+    y = "Observed Germination (%)"
+  ) +
+  theme_classic(base_size = 14) +
+  theme(
+    strip.background = element_blank(),
+    strip.text = element_text(face = "bold"),
+    axis.text.x = element_text(angle = 30, hjust = 1)
+  )
