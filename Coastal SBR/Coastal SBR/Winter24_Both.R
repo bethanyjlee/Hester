@@ -97,3 +97,25 @@ emmeans(fullmodel1,
         pairwise ~ Phase,
         type = "response")
 
+
+
+#### make graph ####
+library(dplyr)
+library(ggplot2)
+
+plot_dat <- exp2 %>%
+  group_by(Soil) %>%
+  summarise(
+    Germination = sum(SeedsGerminated) / sum(SeedsSown),
+    TotalSeeds = sum(SeedsSown)
+  )
+
+ggplot(plot_dat, aes(x = Soil, y = Germination)) +
+  geom_col(fill = "darkseagreen3", color = "black", width = 0.7) +
+  scale_y_continuous(labels = scales::percent_format(accuracy = 0.1),
+                     expand = expansion(mult = c(0, 0.05))) +
+  labs(
+    x = "Soil Treatment",
+    y = "Observed Germination (%)"
+  ) +
+  theme_classic(base_size = 14)

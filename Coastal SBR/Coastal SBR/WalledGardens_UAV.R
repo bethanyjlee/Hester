@@ -13,7 +13,7 @@ hist(dat$PercentVeg[dat$Walled == "Yes"],
      xlab = "% Vegetation")
 
 hist(dat$PercentVeg[dat$Walled == "No"],
-     main = "Walled",
+     main = "UnWalled",
      xlab = "% Vegetation")
 
 shapiro.test(dat$PercentVeg[dat$Walled == "No"])
@@ -37,5 +37,5 @@ ggplot(dat, aes(x = Walled, y = PercentVeg, fill = Walled)) +
   geom_jitter() +
   labs(x = "Walled or Not", y = "Vegetation cover %") +
   theme_bw()+
-  theme(legend.position = "none") +
-  facet_wrap(~GARDENNUM)
+  theme(legend.position = "none") 
+ # +facet_wrap(~GARDENNUM)
