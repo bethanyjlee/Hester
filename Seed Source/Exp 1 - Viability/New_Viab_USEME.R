@@ -192,14 +192,15 @@ p_indiv <- ggplot() +
     y = "Proportion viable")
 
 p_indiv
-
+outdir <- "Figures"
 
 ggsave(
-  "SupplementalFigure2.tif",
-  p_main,
-  dpi = 300,
-  width = 7,
-  height = 5)
+  filename = file.path(outdir, "LeeSupplemental2.tif"),
+  plot = p_indiv,
+  dpi = 300
+)
+
+ggsave(file.path(Figure, "LeeSupplemental2.tif"), p_indiv, dpi = 300)
 
 #### R² for each marsh type ####
 

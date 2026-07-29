@@ -262,7 +262,8 @@ pairs(emm_site, adjust = "tukey")
 emm_percent <- summary(emm_tidal) %>%
   mutate(percent = prob * 100)
 
-emm_percentlibrary(stringr)
+emm_percent
+library(stringr)
 library(ggplot2)
 library(scales)
 library(multcomp)  # for cld
@@ -419,7 +420,7 @@ long_id <- fulldata %>%
   mutate(
     Date = as.Date(gsub("X", "", Date), format = "%m.%d.%y"),
     value = as.numeric(value),
-    Soils = factor(Soil.Type, levels = c("Hester","Combo","Potting Soil")),
+    Soils = factor(Soil.Type, levels = c("Restoration Site","Combo","Potting Soil")),
     Seed.Source = factor(SiteID),
     TidalCat = factor(TidalCat),
     
@@ -486,7 +487,7 @@ gg_base_final <- ggplot(
 
 gg_base_final
 
-
+ggsave(filename = "SupplementalFig4.tif", path = "Figures")  
 
 # Helper: last non-NA
 last_non_na <- function(x) { y <- x[!is.na(x)]; if (length(y)) y[length(y)] else NA_real_ }

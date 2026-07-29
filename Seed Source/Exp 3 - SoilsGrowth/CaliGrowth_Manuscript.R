@@ -270,3 +270,5 @@ ggplot(growth_long, aes(x = SiteID, y = Height, fill = SoilType)) +
        title = "Plant Growth by Tidal Category") +
   scale_fill_manual(values = soil_colors) +
   theme_bw()
+
+ggsave(filename = "SupplementalFig6.tif", dpi = 300, path = "Figures")  
