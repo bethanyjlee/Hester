@@ -205,10 +205,19 @@ ph_test <- cox.zph(Cox_soil_randSite)
 print(ph_test)
 plot(ph_test)
 
+# Rename soil level
+surv_data$SoilType <- factor(
+  surv_data$SoilType,
+  levels = c("Hester", "Combo", "Potting Soil"),
+  labels = c("Restoration Site", "Combo", "Potting Soil"))
 
-fit_soil <- survfit(cox_soil, newdata = data.frame(
-  SoilType = factor(c("Hester", "Combo", "Potting Soil"),
-                    levels = c("Hester", "Combo", "Potting Soil"))))
+fit_soil <- survfit(
+  cox_soil,
+  newdata = data.frame(
+    SoilType = factor(c("Hester", "Combo", "Potting Soil"),
+                      levels = c("Hester", "Combo", "Potting Soil"))
+  )
+)
 
 ggsurvplot(
   fit_soil,
@@ -237,7 +246,7 @@ ggsurvplot(
   legend.title = "Soil Type",
   ggtheme = theme_bw())
 
-ggsave(filename = "Figure6.tif", dpi = 300, path = "Figures")
+
 
 
 surv_data$SeedSource <- factor(surv_data$SiteID)
@@ -283,9 +292,24 @@ ggsurvplot(
 
 # Define custom soil colors
 soil_colors <- c(
-  "Hester" = "#999333",
+  "Restoration Site" = "#999333",
   "Combo" = "#aa4499",
   "Potting Soil" = "#661100")
+)
+
+ggsurvplot(
+  fit_soil,
+  data = surv_data,
+  conf.int = TRUE,
+  palette = soil_colors,
+  legend.title = "Soil Type",
+  legend.labs = c("Restoration Site", "Combo", "Potting Soil"),
+  xlab = "Days since 6/12",
+  ylab = "Predicted survival probability",
+  ggtheme = theme_bw()
+)
+
+ggsave(filename = "SupplementalFig5.tif", dpi = 300, path = "Figures")
 
 # Replot model-based survival (fit_soil) with colors
 ggsurvplot(

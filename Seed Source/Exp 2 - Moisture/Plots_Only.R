@@ -165,4 +165,5 @@ final_cum_plot +
             fontface = "bold")
 
 final_cum_plot +geom_text(data = stat_dat,aes(x = Inf, y = y, label = sig),inherit.aes = FALSE,hjust = 1.2,size = 5,fontface = "bold")
-                                                                                                                                                                                                                                                     
+
+ggsave(filename = "SupplementalFig3.tif", dpi = 300, path = "Figures")                                                                                                                                                                                                                                                   

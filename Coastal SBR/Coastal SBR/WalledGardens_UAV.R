@@ -20,7 +20,7 @@ shapiro.test(dat$PercentVeg[dat$Walled == "No"])
 
 shapiro.test(dat$PercentVeg[dat$Walled == "Yes"])
 
-var.test(PercentVeg ~ Walled, data = dat) ### p value of 0.3652 = variances are simialar
+var.test(PercentVeg ~ Walled, data = dat) ### p value of 0.3652 = variances are similar
 
 qqnorm(dat$PercentVeg[dat$Walled == "No"])
 qqline(dat$PercentVeg[dat$Walled == "No"])

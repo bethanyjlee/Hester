@@ -29,7 +29,7 @@ names(greenhouse) <- c(
   "Date2", "Survivors2", "Height2",
   "Date3", "Survivors3", "Height3")
 
-greenhouse$Soil.Type <- recode(
+greenhouse$Soil.Type <- dplyr::recode(
   greenhouse$Soil.Type,
   "Hester" = "Restoration Site")
 
@@ -208,3 +208,6 @@ final_fig5 <- plot_grid(
   align = "v")
 
 final_fig5
+
+ggsave(filename = "Fig5.tif", path = "Figures")  
+
