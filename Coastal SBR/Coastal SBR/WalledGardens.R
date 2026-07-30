@@ -45,25 +45,6 @@ seedlings <- long_dat %>%
 
 ggplot(seedlings,
        aes(x = Walled, y = Count, fill = Walled)) +
-  geom_boxplot(width = 0.55,
-               alpha = 0.6,
-               outlier.shape = NA) +
-  geom_jitter(width = 0.08,
-              size = 2.5,
-              alpha = 0.8) +
-  labs(
-    x = NULL,
-    y = "Seedling abundance"
-  ) +
-  theme_classic() +
-  theme(
-    legend.position = "none",
-    axis.text = element_text(size = 12),
-    axis.title = element_text(size = 13)
-  )
-
-ggplot(seedlings,
-       aes(x = Walled, y = Count, fill = Walled)) +
   stat_summary(fun = mean,
                geom = "bar",
                width = 0.6,
@@ -75,16 +56,12 @@ ggplot(seedlings,
   geom_jitter(width = 0.08,
               size = 2,
               alpha = 0.7) +
-  labs(
-    x = "Walled or no?",
-    y = "Mean seedling abundance"
-  ) +
+  labs(x = "Walled or no?", y = "Mean seedling abundance" ) +
   theme_classic() +
   theme(
     legend.position = "none",
     axis.text = element_text(size = 12),
-    axis.title = element_text(size = 13)
-  )
+    axis.title = element_text(size = 13))
 
 ggplot(seedlings,
        aes(Walled, Count, color = Walled)) +
@@ -99,14 +76,9 @@ ggplot(seedlings,
                geom = "errorbar",
                width = 0.12,
                color = "black") +
-  labs(
-    x = NULL,
-    y = "Seedling abundance"
-  ) +
+  labs(x = NULL,y = "Seedling abundance" ) +
   theme_classic() +
-  theme(
-    legend.position = "none"
-  )
+  theme(legend.position = "none")
 
 library(dplyr)
 
@@ -279,8 +251,7 @@ wilcox.test(
 
 seedlings <- seedlings %>%
   mutate(
-    GroundwaterInfluenced = factor(Groundwater.influenced)
-  )
+    GroundwaterInfluenced = factor(Groundwater.influenced))
 
 mod.gw <- glmmTMB(
   Count ~ Walled + GroundwaterInfluenced +
@@ -312,4 +283,14 @@ aggregate(
   Count ~ GroundwaterInfluenced + Walled,
   data = seedlings,
   summary
+)
+
+#### okay since we have one corner of our 2x2 treatments that is 0 lets just subset
+
+gw <- subset(seedlings, GroundwaterInfluenced == "Yes")
+
+glmmTMB(
+  Count ~ Walled + (1|Number..E.to.W.),
+  family = nbinom2(),
+  data = gw
 )

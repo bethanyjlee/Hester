@@ -383,14 +383,12 @@ viab_restored <- subset(viab, TidalCat == "Restored")
 m_tidal <- glmmTMB(
   cbind(Seeds, Total - Seeds) ~ Elevation,
   family = betabinomial(link = "logit"),
-  data = viab_tidal
-)
+  data = viab_tidal)
 
 m_restored <- glmmTMB(
   cbind(Seeds, Total - Seeds) ~ Elevation,
   family = betabinomial(link = "logit"),
-  data = viab_restored
-)
+  data = viab_restored)
 
 # Predicted values
 pred_tidal <- predict(m_tidal, type = "response")
@@ -406,29 +404,21 @@ r2_restored <- round(cor(viab_restored$Seeds / viab_restored$Total,
 # Labels
 eq_labels <- data.frame(
   TidalCat = c("Tidal", "Restored"),
-  
   label = c(
     paste0(
       "Tidal: y = ",
       round(b0_tidal,3),
       ifelse(b1_tidal >= 0, " + ", " - "),
       abs(round(b1_tidal,3)),
-      "x\nRm² = ", r2_tidal
-    ),
-    
+      "x\nRm² = ", r2_tidal ),
     paste0(
       "Restored: y = ",
       round(b0_restored,3),
       ifelse(b1_restored >= 0, " + ", " - "),
       abs(round(b1_restored,3)),
-      "x\nRm² = ", r2_restored
-    )
-  ),
-  
+      "x\nRm² = ", r2_restored)),
   x = min(viab$Elevation) + 0.02,
-  y = c(0.97, 0.88)
-)
-
+  y = c(0.97, 0.88))
 
 group_colors<- c(Tidal = "#1E88E5", Muted = '#D81B60', Restored = '#FFC107')
 
@@ -571,14 +561,12 @@ AIC(m_quad, m_quad_glm)
 m_tidal_quad <- glmmTMB(
   cbind(Seeds, Fail) ~ Elev_c + I(Elev_c^2),
   family = betabinomial(),
-  data = subset(viab, TidalCat == "Tidal")
-)
+  data = subset(viab, TidalCat == "Tidal"))
 
 m_restored_quad <- glmmTMB(
   cbind(Seeds, Fail) ~ Elev_c + I(Elev_c^2),
   family = betabinomial(),
-  data = subset(viab, TidalCat == "Restored")
-)
+  data = subset(viab, TidalCat == "Restored"))
 
 summary(m_tidal_quad)
 summary(m_restored_quad)
@@ -587,8 +575,7 @@ summary(m_restored_quad)
 m_tidal_linear <- glmmTMB(
   cbind(Seeds, Fail) ~ Elev_c,
   family = betabinomial(),
-  data = subset(viab, TidalCat == "Tidal")
-)
+  data = subset(viab, TidalCat == "Tidal"))
 
 summary(m_tidal_linear) ###it failed - might not be worth to do 2 separate fits
 
@@ -598,8 +585,7 @@ m_quad2 <- glmmTMB(
   cbind(Seeds, Fail) ~
     TidalCat * (Elev_c + I(Elev_c^2)),
   family = betabinomial(),
-  data = viab
-)
+  data = viab)
 
 summary(m_quad2)
 AIC(m_quad, m_quad2)

@@ -77,14 +77,12 @@ restored <- subset(viab, TidalCat == "Restored")
 m_rest_linear <- glmmTMB(
   cbind(Seeds, Fail) ~ Elev_c,
   family = betabinomial(link = "logit"),
-  data = restored
-)
+  data = restored)
 
 m_rest_quad <- glmmTMB(
   cbind(Seeds, Fail) ~ Elev_c + I(Elev_c^2),
   family = betabinomial(link = "logit"),
-  data = restored
-)
+  data = restored)
 
 anova(m_rest_linear, m_rest_quad)
 

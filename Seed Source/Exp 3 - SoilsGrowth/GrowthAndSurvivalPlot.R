@@ -31,16 +31,14 @@ names(greenhouse) <- c(
 
 greenhouse$Soil.Type <- recode(
   greenhouse$Soil.Type,
-  "Hester" = "Restoration Site"
-)
+  "Hester" = "Restoration Site")
 
 #### COLORS ####
 
 soil_colors <- c(
   "Restoration Site" = "#999333",
   "Combo" = "#aa4499",
-  "Potting Soil" = "#661100"
-)
+  "Potting Soil" = "#661100")
 
 #### CREATE DAT2 ####
 
@@ -181,11 +179,9 @@ fig5b <- ggplot(
   geom_text(
     aes(
       y = mean_growth + se_growth,
-      label = letters
-    ),
+      label = letters),
     vjust = -0.4,
-    size = 5
-  ) +
+    size = 5) +
   facet_wrap(~ Tidal, ncol = 3,
              labeller = labeller(
                Tidal = c(
@@ -198,8 +194,7 @@ fig5b <- ggplot(
   theme(legend.position = "none",panel.grid.minor = element_blank(),
     text = element_text(size = 13))+
   scale_y_continuous(
-    expand = expansion(mult = c(0, 0.10))
-  )
+    expand = expansion(mult = c(0, 0.10)))
 
 #### combine figure ####
 
@@ -210,7 +205,6 @@ final_fig5 <- plot_grid(
   fig5b,
   labels = c("A", "B"),
   ncol = 1,
-  align = "v"
-)
+  align = "v")
 
 final_fig5
