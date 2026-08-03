@@ -399,12 +399,11 @@ gg_raw_soil <- ggplot(raw_ts, aes(x = DaysAfterSowing, y = mean_prop ,
   scale_color_manual(values = soil_colors) +
   scale_fill_manual(values = soil_colors, guide = 'none') +
   facet_grid(~ TidalCat, labeller = labeller(TidalCat = tidal_labels)) +
-  theme_bw(base_size = 12) +
+  theme_bw() +
   labs(y = "Proportion Germinated") +
-  theme(axis.text.x = element_text(angle = 0, hjust = 0.5))
+  theme(axis.text.x = element_text(angle = 0, hjust = 0.5),
+        strip.text = element_text(face = "bold"))
 
-library(egg)
-tag_facet(gg_raw_soil)
 
 gg_raw_soil
 ggsave(filename = "Figure4.tif", dpi = 300, path = "Figures")
