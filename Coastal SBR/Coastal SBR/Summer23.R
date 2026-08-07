@@ -87,10 +87,42 @@ performance::r2(fullmodel1)
 
 #### make graph ####
 
-ggplot(exp1, aes(x = Soil, y = GermProportion, fill = Soil)) +
+scale_fill_manual(values = c(
+  "Ambient" = "#56B4E9",      # Sky blue
+  "Compost" = "#009E73",      # Bluish green
+  "PeatPot" = "#E69F00",      # Orange
+  "PottingSoil" = "#CC79A7"   # Reddish purple
+))
+
+exp1 <- dat %>%
+  filter(Experiment == "Summer23")
+
+exp1_summary <- exp1 %>%
+  group_by(Soil, Phase) %>%
+  summarise(
+    mean_germ = mean(GermProportion),
+    sd_germ = sd(GermProportion),
+    .groups = "drop"
+  )
+
+ggplot(exp1_summary, aes(x = Soil, y = mean_germ, fill = Soil)) +
   geom_col(width = 0.7) +
-    facet_wrap(~ Phase) +
-  theme_bw(base_size = 12) +
-  labs(y = "Proportion Germinated") +
-  theme(axis.text.x = element_text(angle = 0, hjust = 0.5))
-  
+  geom_errorbar(
+    aes(ymin = mean_germ - sd_germ,
+        ymax = mean_germ + sd_germ),
+    width = 0.2) +
+  geom_jitter(
+    data = exp1,
+    aes(x = Soil, y = GermProportion),
+    inherit.aes = FALSE,
+    width = 0.1,
+    size = 2) +
+  facet_wrap(~Phase)+
+  labs(y = "Mean Germination") +
+  scale_fill_manual(values = c(
+    "Ambient"      = "#56B4E9",
+    "Coir"         = "#0072B2",
+    "Compost"      = "#009E73",
+    "PeatPot"      = "#E69F00",
+    "PottingSoil"  = "#CC79A7",
+    "YampahMud"    = "#D55E00"))

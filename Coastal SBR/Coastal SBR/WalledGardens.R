@@ -294,3 +294,65 @@ glmmTMB(
   family = nbinom2(),
   data = gw
 )
+
+##### Vegetation (natural seedlings only) by garden
+
+garden_seedlings <- seedlings %>%
+  group_by(`Number..E.to.W.`, Walled) %>%
+  summarise(
+    TotalSeedlings = sum(Count, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    Garden = factor(`Number..E.to.W.`,
+                    levels = sort(unique(`Number..E.to.W.`)))
+  )
+
+ggplot(garden_seedlings,
+       aes(x = Garden,
+           y = TotalSeedlings,
+           fill = Walled)) +
+  geom_col(position = position_dodge(width = 0.8),
+           color = "black",
+           width = 0.7) +
+  labs(
+    x = "Garden",
+    y = "Naturally Recruited Seedlings",
+    fill = "Walled"
+  ) +
+  theme_classic() +
+  theme(
+    axis.text.x = element_text(angle = 90, vjust = 0.5),
+    axis.title = element_text(size = 13)
+  )
+
+##### Vegetation (natural seedlings only) by groundwater-influenced gardens
+
+garden_seedlings <- seedlings %>%
+  filter(`Number..E.to.W.` %in% 6:10) %>%
+  group_by(`Number..E.to.W.`, Walled) %>%
+  summarise(
+    TotalSeedlings = sum(Count, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    Garden = factor(`Number..E.to.W.`, levels = 6:10)
+  )
+
+ggplot(garden_seedlings,
+       aes(x = Garden,
+           y = TotalSeedlings,
+           fill = Walled)) +
+  geom_col(position = position_dodge(width = 0.8),
+           width = 0.7,
+           color = "black") +
+  labs(
+    x = "Groundwater-influenced garden",
+    y = "Total naturally recruiting seedlings",
+    fill = "Walled"
+  ) +
+  theme_classic() +
+  theme(
+    axis.title = element_text(size = 13),
+    legend.position = "top"
+  )
