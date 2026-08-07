@@ -76,8 +76,10 @@ car::Anova(fullmodel1, type = "II")
 
 ## Diagnostics
 
+library(DHARMa)
+
 sim <- simulateResiduals(
-  fullmodel1,
+  fullmodel2,
   plot = TRUE)
 
 testDispersion(sim)
@@ -85,17 +87,6 @@ testDispersion(sim)
 testZeroInflation(sim)
 
 testUniformity(sim)
-
-
-## Estimated Marginal Means
-
-emmeans(fullmodel1,
-        pairwise ~ Soil,
-        type = "response")
-
-emmeans(fullmodel1,
-        pairwise ~ Phase,
-        type = "response")
 
 
 

@@ -143,3 +143,54 @@ ggplot(plot_dat,
     strip.text = element_text(face = "bold"),
     axis.text.x = element_text(angle = 30, hjust = 1)
   )
+
+
+#### Individual Soil Variable Analyses ####
+
+## Soil Bulk Density
+model_bulkdensity <- glmmTMB(
+  cbind(SeedsGerminated, SeedsSown - SeedsGerminated) ~
+    SoilBulkDensity,
+  family = betabinomial(link = "logit"),
+  data = exp4
+)
+
+Anova(model_bulkdensity, type = "II")
+summary(model_bulkdensity)
+
+## Estimated marginal trend
+emtrends(model_bulkdensity,
+         ~1,
+         var = "SoilBulkDensity")
+
+
+## Soil Volumetric Water Content
+model_watercontent <- glmmTMB(
+  cbind(SeedsGerminated, SeedsSown - SeedsGerminated) ~
+    SoilVWaterContent,
+  family = betabinomial(link = "logit"),
+  data = exp4
+)
+
+Anova(model_watercontent, type = "II")
+summary(model_watercontent)
+
+emtrends(model_watercontent,
+         ~1,
+         var = "SoilVWaterContent")
+
+
+## Soil Organic Matter
+model_organicmatter <- glmmTMB(
+  cbind(SeedsGerminated, SeedsSown - SeedsGerminated) ~
+    SoilOrganicMatter,
+  family = betabinomial(link = "logit"),
+  data = exp4
+)
+
+Anova(model_organicmatter, type = "II")
+summary(model_organicmatter)
+
+emtrends(model_organicmatter,
+         ~1,
+         var = "SoilOrganicMatter")
