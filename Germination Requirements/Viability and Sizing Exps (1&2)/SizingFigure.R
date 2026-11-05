@@ -162,3 +162,69 @@ p_bybin <- ggplot(df, aes(x = Size, y = Germ, color = Inundation)) +
   theme(legend.position = "top", plot.title = element_text(face = "bold"))
 
 print(p_bybin)
+
+###### Model Diagnostics #######
+# Number of unique sources in each inundation category
+df %>%
+  distinct(Seed.Source, Inundation) %>%
+  count(Inundation)
+
+# Number of Petri dish observations per source
+df %>%
+  count(Seed.Source, Inundation)
+
+# Model diagnostics for overall weighted regression
+par(mfrow = c(2, 2))
+plot(fit_all)
+
+# Model summaries
+summary(fit_all)
+summary(fit_by)
+
+glm(
+  Germ ~ Inundation,
+  family = quasibinomial,
+  data = df
+)
+
+# Fit the model and save it
+mod_inundation <- glm(
+  Germ ~ Inundation,
+  family = quasibinomial,
+  data = df
+)
+
+# Check dispersion
+deviance(mod_inundation) / df.residual(mod_inundation)
+
+# Check model summary
+summary(mod_inundation)
+
+# Check confidence intervals
+exp(cbind(
+  OR = coef(mod_inundation),
+  confint.default(mod_inundation)
+))
+
+# Calculate average germination by source
+source_summary <- df %>%
+  group_by(Seed.Source, Inundation) %>%
+  summarise(
+    Mean_Germ = mean(Germ),
+    SD_Germ = sd(Germ),
+    N = n(),
+    .groups = "drop"
+  )
+
+print(source_summary)
+
+# Average germination within each source
+source_means <- df %>%
+  group_by(Seed.Source, Inundation) %>%
+  summarise(
+    Mean_Germ = mean(Germ),
+    .groups = "drop"
+  )
+
+# Compare source-level means
+t.test(Mean_Germ ~ Inundation, data = source_means)
